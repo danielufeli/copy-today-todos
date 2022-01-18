@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do List
+# Today's To Do List
 
 HTML list of To Do tasks
 
@@ -12,17 +12,15 @@ HTML list of To Do tasks
 
 ## Live Demo
 
-[Live Demo Link](https://danielufeli.github.io/todolist/dist/)
+[Live Demo Link](https://danielufeli.github.io/todays-todo-list/dist)
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
 
 - Select the link with the code on the https code tab in the repo.
-- Open a Terminal and write the command: git clone "git@github.com:danielufeli/todolist.git".
-- cd into todolist folder
-- run npm install
-- run npm start
+- Open a Terminal and write the command: git clone "git@github.com:danielufeli/todays-todo-list.git".
+- run npm start in the terminal.
 
 ## Authors
 
@@ -42,4 +40,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
