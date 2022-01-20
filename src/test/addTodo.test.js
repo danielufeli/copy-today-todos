@@ -2,53 +2,40 @@
  * @jest-environment jsdom
  */
 
-import addTodo from '../modules/addTodo.js';
-import LocalStorageMock from '../__mocks__/localstorage';
-
+import addTodo from '../modules/addTodoTest.js';
+import getTodos from '../modules/getTodos.js';
 
 jest.mock('../__mocks__/localstorage');
-jest.mock('../modules/localstorage');
-
-const data = [
-  {
-    description: 'Book 1',
-    index: 1,
-    completed: false,
-  },
-  {
-    description: 'Book 2',
-    index: 2,
-    completed: true,
-  },
-  {
-    description: 'Book 3',
-    index: 3,
-    completed: false,
-  },
-];
+jest.mock('../__mocks__/list');
 
 describe('Add...', () => {
-//   test('Abc to empty items', () => {
-//     const input = { value: 'Abc' };
-//     addTodo(input);
-//     expect(itemsEmpty.length).toBe(1);
-//   });
+  test('Test Empty Localstorage', () => {
+    document.body.innerHTML = `<ul class="todoList"></ul>`;
+    getTodos();
+    const local = localStorage.getItem('todos');
+    expect(local).toBe(null);
+  });
 
-  test('Abc to full items', () => {
-    const input = { value: 'Abc' };
-    const itemsFull = [
-      {
-        description: 'xyzzy',
-        complete: false,
-        index: 0,
-      },
-      {
-        description: 'abcde',
-        complete: true,
-        index: 1,
-      },
-    ];
+  test('Test Empty DOM', () => {
+    document.body.innerHTML = `<ul class="todoList"></ul>`;
+    getTodos();
+    expect(document.body.querySelectorAll('li').length).toBe(0);
+  });
+
+
+  test('Test Adding Tasks', () => {
+    document.body.innerHTML = `<ul class="todoList"></ul>`;
+    const input = { value: 'Book 1' };
+    const input2 = { value: 'Book 2' };
     addTodo(input);
-    expect(itemsFull.length).toBe(3);
+    addTodo(input2);
+    const local = JSON.parse(localStorage.getItem('todos'));
+    expect(local.length).toBe(2);
+  });
+
+  test('Test NonEmpty DOM', () => {
+    document.body.innerHTML = `<ul class="todoList"></ul>`;
+    getTodos();
+    expect(document.body.querySelectorAll('li').length).toBe(2);
   });
 });

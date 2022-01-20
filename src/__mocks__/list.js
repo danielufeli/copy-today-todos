@@ -1,5 +1,6 @@
 const documentToDo = (list) => {
   if (list) {
+    const todoList = document.querySelector('.todoList');
     list.map((todo) => {
       const newTodo = document.createElement('li');
       newTodo.classList.add('task');

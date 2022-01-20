@@ -4,7 +4,7 @@
   "description": "A list of To Do tasks",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "webpack",
     "start": "webpack serve --open"
   },
