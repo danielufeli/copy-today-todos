@@ -1,5 +1,12 @@
-import addTodo from '../modules/addTodo.js';
+/**
+ * @jest-environment jsdom
+ */
 
+import addTodo from '../modules/addTodo.js';
+import LocalStorageMock from '../__mocks__/localstorage';
+
+
+jest.mock('../__mocks__/localstorage');
 jest.mock('../modules/localstorage');
 
 const data = [

@@ -9,7 +9,7 @@ const addTodo = (e) => {
   }
   const todoInput = document.querySelector('.todo-input');
   const todoList = document.querySelector('.todoList');
-  e.preventDefault();
+  // e.preventDefault();
   const todo = {
     description: todoInput.value,
     index: todos.length + 1,
