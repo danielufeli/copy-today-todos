@@ -22,11 +22,24 @@ To get a local copy up and running follow these simple example steps:
 - Open a Terminal and write the command: git clone "git@github.com:danielufeli/copy-today-todos.git".
 - run npm start in the terminal.
 
+## Run test
+
+To check all the functionalities follow these steps:
+
+- run npm install
+- run npm run test
+
+
 ## Authors
 
 👤 **Daniel Ufeli**
 
 - GitHub: [@danielufeli](https://github.com/danielufeli)
+
+👤 **Lisandro Seia**
+
+- GitHub: [@lisandroseia](https://github.com/lisandroseia)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lisandro-seia-295120225/)
 
 ## 🤝 Contributing
 

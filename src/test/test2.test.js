@@ -7,7 +7,6 @@ import getTodos from '../modules/getTodos.js';
 import updateTask from '../modules/updateTask.js';
 import statusUpdate from '../modules/updateTodos.js';
 import clearCompletedTask from '../modules/clearCompletedTask.js';
-import { add } from 'lodash';
 
 jest.mock('../__mocks__/localstorage');
 jest.mock('../__mocks__/list');
@@ -38,7 +37,7 @@ describe('Complete Status Check', () => {
     const checked = document.getElementById('1');
     checked.click();
     statusUpdate('1');
-    const completed = JSON.parse(localStorage.getItem('todos'))[0].completed;
+    const { completed } = JSON.parse(localStorage.getItem('todos'))[0];
     expect(completed).toBe(true);
   });
 
@@ -48,7 +47,7 @@ describe('Complete Status Check', () => {
     const checked = document.getElementById('1');
     checked.click();
     statusUpdate('1');
-    const completed = JSON.parse(localStorage.getItem('todos'))[0].completed;
+    const { completed } = JSON.parse(localStorage.getItem('todos'))[0];
     expect(completed).toBe(false);
   });
 });
@@ -68,15 +67,15 @@ describe('clear all completed', () => {
   test('dom should contain 1 item', () => {
     document.body.innerHTML = '<ul class="todoList"></ul>';
     const input = { value: 'lisandro' };
-    const input2 = {value: 'daniel'};
+    const input2 = { value: 'daniel' };
     addTodo(input);
-    addTodo(input2)
+    addTodo(input2);
     getTodos();
     const checked = document.getElementById('1');
     checked.click();
     statusUpdate('1');
     clearCompletedTask();
     const dom = document.querySelectorAll('li');
-    expect(dom.length).toBe(1)
+    expect(dom.length).toBe(1);
   });
 });
