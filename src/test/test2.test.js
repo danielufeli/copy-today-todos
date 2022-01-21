@@ -67,7 +67,6 @@ describe('clear all completed', () => {
 
   test('dom should contain 1 item', () => {
     document.body.innerHTML = '<ul class="todoList"></ul>';
-    document.body.innerHTML = '<ul class="todoList"></ul>';
     const input = { value: 'lisandro' };
     const input2 = {value: 'daniel'};
     addTodo(input);
